@@ -1,0 +1,45 @@
+spring:
+    profiles:
+      active: local
+    datasource:
+        driverClassName: org.postgresql.Driver
+    jpa:
+      properties:
+        jadira.usertype.autoRegisterUserTypes: true
+    jackson:
+      property-naming-strategy: CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES
+      serialization.WRITE_DATES_AS_TIMESTAMPS: false
+
+---
+
+spring:
+    profiles: local
+    datasource:
+        url: jdbc:postgresql://localhost/postgres
+        username: appuser
+        password: appuser
+
+---
+
+spring:
+    profiles: dev
+
+---
+
+spring:
+    profiles: qa
+
+---
+
+spring:
+    profiles: stage
+    
+---
+
+spring:
+    profiles: uat
+
+---
+
+spring:
+    profiles: prod
